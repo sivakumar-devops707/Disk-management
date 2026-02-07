@@ -22,4 +22,4 @@ done <<< $diskusage
 
 echo -e "$message";
 
-source sh mail.sh "thallasivakumar707@gmail.com" "High Disk Usage Alert in $SERVER_IP" "$message" "HIGH DISK USAGE" "$SERVER_IP" "DevOps Team"
+sh mail.sh "thallasivakumar707@gmail.com" "High Disk Usage Alert in $SERVER_IP" "$message" "HIGH DISK USAGE" "$SERVER_IP" "DevOps Team"
