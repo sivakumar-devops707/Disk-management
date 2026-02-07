@@ -1,4 +1,5 @@
 #!/bin/bash
+SERVER_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 
 log(){
     echo "$(date "+%y %m %d %h %m %s") | $1" |tee -a $log_file
@@ -20,3 +21,5 @@ do
 done <<< $diskusage
 
 echo -e "$message";
+
+source mail.sh "thallasivakumar707@gmail.com" "High Disk Usage Alert in $SERVER_IP" "$message" "HIGH DISK USAGE" "$SERVER_IP" "DevOps Team"
