@@ -14,7 +14,7 @@ do
    partistion=$( echo $line| awk '{print $7}')
 
     if [ $usage -gt $throsholdvalue ]; then
-       message+="High disk usage on $partistion:$usage"
+       message+="High disk usage on $partistion:$usage \n"
     fi    
 
 done <<< $diskusage
