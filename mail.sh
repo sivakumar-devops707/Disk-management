@@ -15,9 +15,10 @@ FINAL_MESSAGE=$(sed -e "s/TO_TEAM/$TO_TEAM/g" -e "s/ALERT_TYPE/$ALERT_TYPE/g" -e
 
 
 {
-echo "To: $TO_ADDRESS"
-echo "Subject: $SUBJECT"
-echo "Content-Type: text/html"
-echo ""
-echo "$MESSAGE_BODY"
+  echo "To: $TO_ADDRESS"
+  echo "Subject: $SUBJECT"
+  echo "MIME-Version: 1.0"
+  echo "Content-Type: text/html; charset=UTF-8"
+  echo ""
+  cat /home/ec2-user/disk_template.html
 } | msmtp "$TO_ADDRESS"
